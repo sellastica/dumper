@@ -9,8 +9,9 @@ class Dumper
 	 *
 	 * @param mixed $value
 	 * @param string $title
+	 * @param bool $escape
 	 */
-	public static function dump($value, string $title = null)
+	public static function dump($value, string $title = null, bool $escape = false)
 	{
 		$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
 		if (!$isAjax) {
@@ -30,7 +31,7 @@ class Dumper
 			}
 
 			echo '<pre class="dump-content">';
-			print_r($value);
+			print_r($escape ? htmlspecialchars($value) : $value);
 			echo '</pre></div>';
 		} else {
 			if (null !== $title) {

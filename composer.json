@@ -1,24 +1,21 @@
 {
-    "name": "sellastica/dumper",
-	"type": "project",
-    "description": "Dumper",
+	"name": "sellastica/dumper",
 	"homepage": "https://github.com/sellastica/dumper",
-    "keywords": ["dumper"],
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Tomáš Krejčí",
-            "email": "tomas@differencemakers.cz"
-        }
-    ],
-    "require": {
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Tomáš Krejčí",
+			"homepage": "http://www.sellastica.com"
+		}
+	],
+	"require": {
 		"php": ">=7.1"
-    },
+	},
 	"require-dev": {
-    },
+	},
 	"autoload": {
-        "psr-4": {
-            "Sellastica\\Dumper\\": "src/"
-        }
+		"psr-4": {
+			"Sellastica\\Dumper\\": "src/"
+		}
 	}
 }
