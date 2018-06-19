@@ -1,6 +1,6 @@
 {
-	"name": "sellastica/dumper",
-	"homepage": "https://github.com/sellastica/dumper",
+	"name": "sellastica/downloader",
+	"homepage": "https://github.com/sellastica/downloader",
 	"license": "proprietary",
 	"authors": [
 		{
@@ -15,7 +15,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Sellastica\\Dumper\\": "src/"
+			"Sellastica\\Downloader\\": "src/"
 		}
 	}
 }
