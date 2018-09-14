@@ -67,3 +67,52 @@ if (!function_exists('gh')) {
 		}
 	}
 }
+
+if (!function_exists('d')) {
+	/**
+	 * Shortcut for \Tracy\Debugger::dump
+	 *
+	 * @author   Jan Tvrdík
+	 * @param    mixed
+	 * @param    mixed $var , ... optional additional variable(s) to dump
+	 * @return   mixed the first dumped variable
+	 */
+	function d($var)
+	{
+		foreach (func_get_args() as $var) \Tracy\Debugger::dump($var);
+		return func_get_arg(0);
+	}
+}
+
+if (!function_exists('bd')) {
+	/**
+	 * Shortcut for \Tracy\Debugger::barDump
+	 *
+	 * @author   Jan Tvrdík
+	 * @param    mixed
+	 * @param    mixed $var , ... optional additional variable(s) to dump
+	 * @return   mixed the first dumped variable
+	 */
+	function bd($var, $title = NULL)
+	{
+		return \Tracy\Debugger::barDump($var, $title);
+	}
+}
+
+if (!function_exists('de')) {
+	/**
+	 * Shortcut for \Tracy\Debugger::dump & exit()
+	 *
+	 * @author   Jan Tvrdík
+	 * @param    mixed
+	 * @param    mixed $var , ... optional additional variable(s) to dump
+	 * @return   void
+	 */
+	function de($var)
+	{
+		if (can_display_debugger()) {
+			foreach (func_get_args() as $var) \Tracy\Debugger::dump($var);
+			exit;
+		}
+	}
+}
