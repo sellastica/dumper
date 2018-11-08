@@ -10,7 +10,8 @@ if (!function_exists('can_display_debugger')) {
 		}
 
 		$neon = \Nette\Neon\Neon::decode(file_get_contents(APP_DIR . '/config/config.neon'));
-		return in_array($_SERVER['REMOTE_ADDR'], $neon['parameters']['dumper']['ip_addresses']);
+		return !empty($_SERVER['REMOTE_ADDR'])
+			&& in_array($_SERVER['REMOTE_ADDR'], $neon['parameters']['dumper']['ip_addresses']);
 	}
 }
 
@@ -93,7 +94,7 @@ if (!function_exists('bd')) {
 	 * @param    mixed $var , ... optional additional variable(s) to dump
 	 * @return   mixed the first dumped variable
 	 */
-	function bd($var, $title = NULL)
+	function bd($var, $title = null)
 	{
 		return \Tracy\Debugger::barDump($var, $title);
 	}
