@@ -92,11 +92,11 @@ if (!function_exists('bd')) {
 	 * @author   Jan Tvrdík
 	 * @param    mixed
 	 * @param    mixed $var , ... optional additional variable(s) to dump
-	 * @return   mixed the first dumped variable
+	 * @return   void
 	 */
 	function bd($var, $title = null)
 	{
-		return \Tracy\Debugger::barDump($var, $title);
+		\Tracy\Debugger::barDump($var, $title);
 	}
 }
 
